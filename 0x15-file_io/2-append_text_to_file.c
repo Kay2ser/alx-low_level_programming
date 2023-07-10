@@ -14,12 +14,11 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, bytes_written, permissions;
+	int fd, bytes_written;
 
 	if (filename == NULL)
 		return (-1);
 
-	permissions = S_IWUSR;  // Write permission for the user
 
 	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
